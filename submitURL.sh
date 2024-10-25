@@ -18,7 +18,7 @@ do
    case "$opt" in
       c ) client_id="$OPTARG" ;;
       s ) client_secret="$OPTARG" ;;
-      u ) urltoanalyse="$OPTARG" ;;
+      u ) urltoanalyze="$OPTARG" ;;
       p ) platform="$OPTARG" ;;
       h ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
