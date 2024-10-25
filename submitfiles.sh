@@ -1,11 +1,37 @@
-####Replace with your credentials and file complete path and set platform for sandbox analysis####
-export client_id="<YOUR_API_CLIENT_ID>"
-export client_secret="<YOUR_API_CLIENT_SECRET>"
+#!/bin/bash
 
-export myfilepath="<YOUR_FILE_WITH_PATH>"
+helpFunction()
+{
+   echo ""
+   echo "Usage: $0 -c client_id -s client_secret -f myfilepath -p platform "
+   echo -e "\t-c your API client"
+   echo -e "\t-s your API secret"
+   echo -e "\t-f your filepath"
+   echo -e "\t-p the platform for sandboxing ex Windows 11 - 140"
+   exit 1 # Exit script after printing help
+}
+
+while getopts "a:b:c:d:" opt
+do
+   case "$opt" in
+      a ) client_id="$OPTARG" ;;
+      b ) client_secret="$OPTARG" ;;
+      c ) myfilepath="$OPTARG" ;;
+      c ) platform="$OPTARG" ;;
+      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+   esac
+done
+
+# Print helpFunction in case parameters are empty
+if [ -z "$client_id" ] || [ -z "$client_secret" ] || [ -z "$myfilepath" ] || [ -z "$platform" ]
+then
+   echo "Some or all of the parameters are empty";
+   helpFunction
+fi
+
+
+
 export base_name=$(basename ${myfilepath})
-
-platform=300
 
 ####Generate API Token####
 json=$(curl --location 'https://api.eu-1.crowdstrike.com/oauth2/token' \
