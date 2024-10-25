@@ -32,9 +32,6 @@ then
 fi
 
 
-
-export base_name=$(basename ${myfilepath})
-
 ####Generate API Token####
 json=$(curl --location 'https://api.eu-1.crowdstrike.com/oauth2/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
