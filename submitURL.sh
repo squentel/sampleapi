@@ -54,8 +54,7 @@ generate_post_data()
   "sandbox": [
    {
     "environment_id": $platform,
-    "url": "$urltoanalyse",
-    "submit_name": "$urlshort"
+    "url": "$urltoanalyse"
     }
   ]
 }
