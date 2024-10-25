@@ -1,3 +1,5 @@
+####Example: bash submitfiles.sh -c "YOUR_API_CLIENT" -s "YOUR_API_SECRET" -f "/YOURPATH/YOUREXE" -p "140"
+
 #!/bin/bash
 
 helpFunction()
@@ -11,7 +13,7 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-while getopts "a:b:c:d:" opt
+while getopts "c:s:f:p:" opt
 do
    case "$opt" in
       c ) client_id="$OPTARG" ;;
