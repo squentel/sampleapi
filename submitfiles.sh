@@ -14,11 +14,11 @@ helpFunction()
 while getopts "a:b:c:d:" opt
 do
    case "$opt" in
-      a ) client_id="$OPTARG" ;;
-      b ) client_secret="$OPTARG" ;;
-      c ) myfilepath="$OPTARG" ;;
-      c ) platform="$OPTARG" ;;
-      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+      c ) client_id="$OPTARG" ;;
+      s ) client_secret="$OPTARG" ;;
+      f ) myfilepath="$OPTARG" ;;
+      p ) platform="$OPTARG" ;;
+      h ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
 
