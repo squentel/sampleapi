@@ -5,7 +5,7 @@
 helpFunction()
 {
    echo ""
-   echo "Usage: $0 -c client_id -s client_secret -f myfilepath -p platform "
+   echo "Usage: $0 -c client_id -s client_secret -u urltoanalyze -p platform "
    echo -e "\t-c your API client"
    echo -e "\t-s your API secret"
    echo -e "\t-u your url"
